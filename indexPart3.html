@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>世界幸福指数</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <li>幸福</li>
+        </div>
+    </header>
+    <main>
+        <div class="carousel">
+            <div class="mainBoxFou">
+                <h1><i>中国还有哪些可以改进之处</i></h1>
+                <p>"世界幸福指数报告"纯粹是主观的。</p>
+                <p>过去几十年，我们总是用经济来衡量一个国家的繁荣、成功，比如GDP，但是，这并不代表着这个国家的人"感觉"幸福。</p>
+                <p>以美国为例。自从1960年代以来，收入提高了，但是幸福感并没有。最近几年，GDP在增长，但是人们的幸福感却在下降。</p>
+                <div>
+                    <div id="jjj"></div>
+                    <div id="main1"></div>
+                </div>
+                <p>根据收集到的数据不难看出，当前我国人民虽然拥有较高的GDP，但随之而来的巨大压力依旧压得他们喘不过气。</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/echarts.js"></script>
+    <script src="js/jquery.js"></script>
+
+
+    <script>
+        const headerDivStrings = ['首页', '排名', '分析', '改进'];
+        const headerDiv = document.getElementsByTagName('header')[0].getElementsByTagName('div')[0];
+        const headerLis = document.getElementsByTagName('header')[0].getElementsByTagName('li');
+        const carousel = document.getElementsByClassName('carousel')[0];
+        let headerDivString = headerDiv.innerHTML;
+        headerDivStrings.forEach((data) => {
+            if (headerDivStrings.indexOf(data) == 0) {
+                headerDivString += '<li><a href="index.html">' + data + '<a></li>'
+            } else {
+                console.log(headerDivStrings.indexOf(data))
+                headerDivString += '<li><a href="indexPart' + headerDivStrings.indexOf(data) + '.html">' + data + '<a></li>'
+            }
+        })
+        headerDiv.innerHTML = headerDivString;
+    </script>
+    <script src="js/ttt.js"></script>
+    <script src="js/jjj.js"></script>
+
+
+
+
+    <!-- <script src="./public/javascript/main.js"></script> -->
+
+</body>
+
+</html>

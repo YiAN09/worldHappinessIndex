@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>世界幸福指数</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <li>幸福</li>
+        </div>
+    </header>
+    <main>
+        <div class="carousel">
+            <div class="mainBoxFir">
+
+            </div>
+        </div>
+    </main>
+    <script>
+        const headerDivStrings = ['首页', '排名', '分析', '改进'];
+        const mainBoxSec = document.getElementsByClassName('mainBoxSec')[0];
+        const headerDiv = document.getElementsByTagName('header')[0].getElementsByTagName('div')[0];
+        const carousel = document.getElementsByClassName('carousel')[0];
+        let headerDivString = headerDiv.innerHTML;
+        headerDivStrings.forEach((data) => {
+            if (headerDivStrings.indexOf(data) == 0) {
+                headerDivString += '<li><a href="index.html">' + data + '<a></li>'
+            } else {
+                console.log(headerDivStrings.indexOf(data))
+                headerDivString += '<li><a href="indexPart' + headerDivStrings.indexOf(data) + '.html">' + data + '<a></li>'
+            }
+        })
+        headerDiv.innerHTML = headerDivString;
+    </script>
+
+</body>
+
+</html>

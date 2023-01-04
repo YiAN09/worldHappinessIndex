@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>世界幸福指数</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <li>幸福</li>
+        </div>
+    </header>
+    <main>
+        <div class="carousel">
+            <div class="mainBoxSec">
+                <h1><i>2022年世界最幸福的十大国家</i></h1>
+                <p>我们再来看看全球前10大幸福国家还有谁？ 据《2022年世界幸福报告》显示， 1）进入全球前5大最幸福的国家还有：丹麦（第2，得分7.636）、冰岛（第3，得分7.557）、瑞士（第4，得分7.512）、荷兰（第5，得分7.415）； 2）进入全球前10大幸福的国家还有：卢森堡（第6，得分7.404）、瑞典（第7，得分7.384）、挪威（第8，得分7.365）、以色列（第9，得分7.364）、新西兰（第10，得分7.2）。</p>
+                <div class="mainBoxSec__text">
+                    <div>
+                        <div class="mainBoxSec__maine">据《2022年世界幸福报告》显示，2022年，全球最幸福的国家是芬兰。 值得一提的是，这也是该国连续第5年位居全球最幸福国家的榜首。</div>
+                        <div class="mainBoxSec__happinesse">据《2022年世界幸福报告》显示，前10大幸福国家主要都是欧洲（更多的是北欧国家）</div>
+                    </div>
+                </div>
+                <div class="mainBoxSec__main">
+                    <div>
+                        <div id="main"></div>
+                        <div id="happiness"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/echarts.js"></script>
+    <script src="js/jquery.js"></script>
+
+
+    <script>
+        const headerDivStrings = ['首页', '排名', '分析', '改进'];
+        const mainBoxSec = document.getElementsByClassName('mainBoxSec')[0];
+        const headerDiv = document.getElementsByTagName('header')[0].getElementsByTagName('div')[0];
+        const headerLis = document.getElementsByTagName('header')[0].getElementsByTagName('li');
+        const carousel = document.getElementsByClassName('carousel')[0];
+        const mainBoxSecText = document.getElementsByClassName('mainBoxSec__text')[0];
+        const mainBoxSecTextDiv = document.getElementsByClassName('mainBoxSec__text')[0].getElementsByTagName('div')[0];
+        const mainBoxSecMain = document.getElementsByClassName('mainBoxSec__main')[0];
+        const mainBoxSecMainDiv = document.getElementsByClassName('mainBoxSec__main')[0].getElementsByTagName('div')[0];
+        mainBoxSecText.addEventListener('mouseover', () => {
+            mainBoxSecTextDiv.style.transform = "translateX(-50%)";
+            mainBoxSecMainDiv.style.transform = "translateX(-50%)";
+            mainBoxSec.style.backgroundColor = "#f8cac2";
+            mainBoxSec.style.color = "black";
+        })
+        mainBoxSecText.addEventListener('mouseleave', () => {
+            mainBoxSecTextDiv.style.transform = "translateX(0)";
+            mainBoxSecMainDiv.style.transform = "translateX(0)";
+            mainBoxSec.style.backgroundColor = "#0d3282";
+            mainBoxSec.style.color = "white";
+        })
+        let headerDivString = headerDiv.innerHTML;
+        headerDivStrings.forEach((data) => {
+            if (headerDivStrings.indexOf(data) == 0) {
+                headerDivString += '<li><a href="index.html">' + data + '<a></li>'
+            } else {
+                console.log(headerDivStrings.indexOf(data))
+                headerDivString += '<li><a href="indexPart' + headerDivStrings.indexOf(data) + '.html">' + data + '<a></li>'
+            }
+        })
+        headerDiv.innerHTML = headerDivString;
+    </script>
+    <script src="js/index.js"></script>
+    <script src="js/happiness.js"></script>
+
+
+
+
+    <!-- <script src="./public/javascript/main.js"></script> -->
+
+</body>
+
+</html>

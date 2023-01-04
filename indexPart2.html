@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>世界幸福指数</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <li>幸福</li>
+        </div>
+    </header>
+    <main>
+        <div class="carousel">
+            <div class="mainBoxThi">
+                <h1><i>为何与中国差距如此之大</i></h1>
+                <p>荷兰是世界有名的低地国家，国土面积为4.15万平方公里，比我国重庆还要小二分之一。其中一半的国土海拔不到一米，四分之一的国土在海平面以下。2019年荷兰人口达1750万，其中西部发达地区人口密度每平方公里在1000人以上。</p>
+                <p>作为一个历史悠久的海运大国，2019年荷兰贸易总额高达1.35万亿美元，贸易顺差720亿美元，其贸易总额比其GDP还要高出一半。在欧洲地区仅次于德国，放到世界上能列入前五，仅次于美、中、德、日。同年荷兰的GDP总量高达9000亿美元，排名世界前20。如果把它放到中国，也只有广东、江苏两省能一较长短。但是，江苏、广东的面积可比荷兰大多，由此可见荷兰经济的雄厚与发达！</p>
+                <div>
+                    <div>
+                        <h3>荷兰幸福指数影响因素</h3>
+                        <p>如图所示，社会支持度、人均 GDP 、健康预期寿命、慷慨程度是影响荷兰幸福指数的最主要影响因素。三者相加大约占据了2/3的投票数</p>
+                    </div>
+                    <div id="binzi"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/echarts.js"></script>
+    <script src="js/jquery.js"></script>
+
+
+    <script>
+        const headerDivStrings = ['首页', '排名', '分析', '改进'];
+        const headerDiv = document.getElementsByTagName('header')[0].getElementsByTagName('div')[0];
+        const headerLis = document.getElementsByTagName('header')[0].getElementsByTagName('li');
+        const carousel = document.getElementsByClassName('carousel')[0];
+        let headerDivString = headerDiv.innerHTML;
+        headerDivStrings.forEach((data) => {
+            if (headerDivStrings.indexOf(data) == 0) {
+                headerDivString += '<li><a href="index.html">' + data + '<a></li>'
+            } else {
+                console.log(headerDivStrings.indexOf(data))
+                headerDivString += '<li><a href="indexPart' + headerDivStrings.indexOf(data) + '.html">' + data + '<a></li>'
+            }
+        })
+        headerDiv.innerHTML = headerDivString;
+    </script>
+    <script src="js/ly.js"></script>
+
+
+
+
+    <!-- <script src="./public/javascript/main.js"></script> -->
+
+</body>
+
+</html>
